@@ -27,7 +27,7 @@ echo "= 			ORA NGUBLEK NGUBLEK BANYU BUTHEK ZAL :V                         ="
 echo "=               				                                                ="
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
-cat > /etc/nginx/sites-available/wordpress << EOF
+cat << EOF | sudo tee -a /etc/nginx/sites-available/wordpress
 server {
         listen 80;
 
@@ -96,7 +96,7 @@ sudo ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/wordpre
 sudo rm /etc/nginx/sites-enabled/default
 cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf_back
 rm /etc/nginx/nginx.conf
-cat > /etc/nginx/nginx.conf << EOF
+cat << EOF | sudo tee -a /etc/nginx/nginx.conf
 user www-data;
 worker_processes 1;
 pid /run/nginx.pid;
