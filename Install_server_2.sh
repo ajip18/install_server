@@ -99,7 +99,7 @@ location /wp-content/uploads/ {
 }
 }
 
-EOF 
+EOF
 
 sudo ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/wordpress
 sudo rm /etc/nginx/sites-enabled/default
@@ -170,9 +170,7 @@ http {
         include /etc/nginx/conf.d/*.conf;
         include /etc/nginx/sites-enabled/*;
 }
-
 EOF
-
 
 
 # Setting PHP.ini
