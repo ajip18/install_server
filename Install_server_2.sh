@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 COLOR_INFO='\e[1;34m'
 COLOR_COMMENT='\e[0;33m'
 COLOR_NOTICE='\e[1;37m'
@@ -29,13 +29,12 @@ aptitude install -y $LIST_OF_APPS
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
 echo "=        				Setting V-Host	         			   	="
-
 echo "= 			ORA NGUBLEK NGUBLEK BANYU BUTHEK ZAL :V     
 echo "=               				
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
 
-cat > /etc/nginx/sites-available/wordpress << EOL
+cat > /etc/nginx/sites-available/wordpress << EOF
 server {
         listen 80;
 
@@ -100,7 +99,7 @@ location /wp-content/uploads/ {
 }
 }
 
-EOL 
+EOF 
 
 sudo ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/wordpress
 sudo rm /etc/nginx/sites-enabled/default
@@ -109,7 +108,7 @@ sudo rm /etc/nginx/sites-enabled/default
 cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf_back
 rm /etc/nginx/nginx.conf
 
-cat > /etc/nginx/nginx.conf << EOL
+cat > /etc/nginx/nginx.conf << EOF
 user www-data;
 worker_processes 1;
 pid /run/nginx.pid;
@@ -180,13 +179,12 @@ EOF
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
 echo "=        				Install Wordpress + Phpmyadmin	         		="
-
 echo "= 			WES WANI ORA AYO GEK NDANG PES :V     
 echo "=               				
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
 
-
+sudo mkdir /var/www/
 cd /var/www/
 wget http://wordpress.org/latest.tar.gz
 
@@ -199,7 +197,6 @@ ln -s /usr/share/phpmyadmin/ /var/www/wordpress/
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
 echo "=                     Setting php.ini  dan cgi                    ="
-
 echo "=             ORA SETTTING BEBEK BEBEKAN GUS :V      
 echo "=                             
 echo "==========================================================================================="
