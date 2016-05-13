@@ -3,7 +3,6 @@ COLOR_INFO='\e[1;34m'
 COLOR_COMMENT='\e[0;33m'
 COLOR_NOTICE='\e[1;37m'
 COLOR_NONE='\e[0m'
-
 # Intro
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
@@ -15,16 +14,11 @@ echo "= Script untuk installasi Nginx server dan wordpress      ="
 echo "= install Packet             				="
 echo "============================================================"
 echo -e "${COLOR_NONE}"
-
-
 LIST_OF_APPS="nginx php5-common php5-mysqlnd php5-xmlrpc php5-curl php5-gd php5-cli php5-fpm php-pear php5-dev php5-imap php5-mcrypt mysql-server phpmyadmin "
 add-apt-repository -y ppa:rtcamp/nginx
 sudo add-apt-repository ppa:ondrej/php5
 sudo apt-get update 
 aptitude install -y $LIST_OF_APPS
-
-
-
 # Setting PHP.ini
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
@@ -33,7 +27,6 @@ echo "= 			ORA NGUBLEK NGUBLEK BANYU BUTHEK ZAL :V                         ="
 echo "=               				                                                ="
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
-
 cat > /etc/nginx/sites-available/wordpress << EOF
 server {
         listen 80;
@@ -98,16 +91,11 @@ location /wp-content/uploads/ {
         }
 }
 }
-
 EOF
-
 sudo ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/wordpress
 sudo rm /etc/nginx/sites-enabled/default
-
-
 cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf_back
 rm /etc/nginx/nginx.conf
-
 cat > /etc/nginx/nginx.conf << EOF
 user www-data;
 worker_processes 1;
@@ -171,8 +159,6 @@ http {
         include /etc/nginx/sites-enabled/*;
 }
 EOF
-
-
 # Setting PHP.ini
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
@@ -181,16 +167,13 @@ echo "= 			WES WANI ORA AYO GEK NDANG PES :V                               ="
 echo "=               				                                                 ="
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
-
 sudo mkdir /var/www/
 cd /var/www/
 wget http://wordpress.org/latest.tar.gz
-
 tar -xzvf latest.tar.gz
 sudo chown -R www-data:www-data wordpress/
 sudo usermod -a -G www-data www-data
 ln -s /usr/share/phpmyadmin/ /var/www/wordpress/
-
 # Setting PHP.ini
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
@@ -199,12 +182,9 @@ echo "=             ORA SETTTING BEBEK BEBEKAN GUS :V                           
 echo "=                                                                                         ="                          
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
-
 sudo nano /etc/php5/fpm/php.ini
 sudo service nginx restart
 sudo service php5-fpm restart
-
-
 # Setting PHP.ini
 echo -e "${COLOR_COMMENT}"
 echo "=========================================================================================="
@@ -213,4 +193,3 @@ echo "= 			MUGI2 LANCAR WEBSITE + REJEKINE                                 ="
 echo "=               			    AMIN	                                        ="
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
-
