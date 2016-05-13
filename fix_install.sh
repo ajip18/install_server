@@ -188,7 +188,7 @@ sudo service php5-fpm restart
 # Setting PHP.ini
 echo -e "${COLOR_COMMENT}"
 echo "=========================================================================================="
-echo "=        				SAMPUNG RAMPUNG SUHU	         			="
+echo "=        				SAMPUN RAMPUNG SUHU	         			="
 echo "= 			MUGI2 LANCAR WEBSITE + REJEKINE                                 ="
 echo "=               			    AMIN	                                        ="
 echo "==========================================================================================="
