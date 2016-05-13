@@ -29,8 +29,8 @@ aptitude install -y $LIST_OF_APPS
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
 echo "=        				Setting V-Host	         			   	="
-echo "= 			ORA NGUBLEK NGUBLEK BANYU BUTHEK ZAL :V     
-echo "=               				
+echo "= 			ORA NGUBLEK NGUBLEK BANYU BUTHEK ZAL :V                         ="
+echo "=               				                                                ="
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
 
@@ -177,8 +177,8 @@ EOF
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
 echo "=        				Install Wordpress + Phpmyadmin	         		="
-echo "= 			WES WANI ORA AYO GEK NDANG PES :V     
-echo "=               				
+echo "= 			WES WANI ORA AYO GEK NDANG PES :V                               ="
+echo "=               				                                                 ="
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
 
@@ -194,9 +194,9 @@ ln -s /usr/share/phpmyadmin/ /var/www/wordpress/
 # Setting PHP.ini
 echo -e "${COLOR_INFO}"
 echo "=========================================================================================="
-echo "=                     Setting php.ini  dan cgi                    ="
-echo "=             ORA SETTTING BEBEK BEBEKAN GUS :V      
-echo "=                             
+echo "=                     Setting php.ini  dan cgi                                            ="
+echo "=             ORA SETTTING BEBEK BEBEKAN GUS :V                                           ="
+echo "=                                                                                         ="                          
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
 
@@ -209,9 +209,8 @@ sudo service php5-fpm restart
 echo -e "${COLOR_COMMENT}"
 echo "=========================================================================================="
 echo "=        				SAMPUNG RAMPUNG SUHU	         			="
-
-echo "= 			MUGI2 LANCAR WEBSITE + REJEKINE     
-echo "=               			    AMIN	
+echo "= 			MUGI2 LANCAR WEBSITE + REJEKINE                                 ="
+echo "=               			    AMIN	                                        ="
 echo "==========================================================================================="
 echo -e "${COLOR_NONE}"
 
