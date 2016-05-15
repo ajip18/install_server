@@ -68,8 +68,8 @@ location = /robots.txt {
 location ~ \.php$ {
 		try_files $uri =404;
 		fastcgi_split_path_info ^(.+\.php)(/.+)$;
-		fastcgi_cache  microcache;
-		fastcgi_cache_key $scheme$host$request_uri$request_method;
+		#fastcgi_cache  microcache;
+		fastcgi_cache_key \$scheme\$host\$request_uri\$request_method;
 		fastcgi_cache_valid 200 301 302 30s;
 		fastcgi_cache_use_stale updating error timeout invalid_header http_500;
 		fastcgi_pass_header Set-Cookie;
