@@ -66,7 +66,7 @@ location = /robots.txt {
         log_not_found off;
 }
 location ~ \.php$ {
-		try_files $uri =404;
+		try_files \$uri =404;
 		fastcgi_split_path_info ^(.+\.php)(/.+)$;
 		#fastcgi_cache  microcache;
 		fastcgi_cache_key \$scheme\$host\$request_uri\$request_method;
