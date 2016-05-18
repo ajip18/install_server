@@ -29,7 +29,7 @@ echo "==========================================================================
 echo -e "${COLOR_NONE}"
 cat << EOF | sudo tee -a /etc/nginx/sites-available/wordpress
 server {
-        listen 80;
+        listen 80 default;
 
         root /var/www/wordpress;
         index index.php index.html index.htm;
@@ -45,15 +45,6 @@ server {
 location / {
                 # try_files $uri $uri/ =404;
                 try_files \$uri \$uri/ /index.php?q=\$uri&\$args;
-        }
-
-
-        location ~ \.php$ {
-                try_files \$uri =404;
-                fastcgi_split_path_info ^(.+\.php)(/.+)$;
-                fastcgi_pass unix:/var/run/php5-fpm.sock;
-                fastcgi_index index.php;
-                include fastcgi_params;
         }
 
 location = /favicon.ico {
