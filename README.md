@@ -20,7 +20,7 @@ semoga bermanfaat...
 
 Jika terjadi error 404  solusinya.
 edit file :
-#nano nano /etc/php5/fpm/pool.d/www.conf
+#nano /etc/php5/fpm/pool.d/www.conf
 1.
 ubah listen = /var/run/php5-fpm.sock
 menjadi => listen = 127.0.0.1:9000
