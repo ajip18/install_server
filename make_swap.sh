@@ -2,8 +2,7 @@
 echo "Install Swap Linux SUHU"
 
 
-swapp file
-swapon -s
+
 sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k
 sudo mkswap -f /swapfile
 sudo swapon /swapfile
